@@ -3,11 +3,11 @@ library autolink_text;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-class AutolinkTextComponent {
+class _AutolinkTextComponent {
   final String text;
   final bool isLink;
 
-  AutolinkTextComponent({required this.text, required this.isLink});
+  _AutolinkTextComponent({required this.text, required this.isLink});
 }
 
 class AutolinkText extends StatefulWidget {
@@ -23,7 +23,7 @@ class AutolinkText extends StatefulWidget {
 
   const AutolinkText(
     this.text, {
-    required Key key,
+    Key? key,
     required this.handleTapOnUrl,
     this.style = const TextStyle(),
     this.linkColor = defaultLinkColor,
@@ -121,15 +121,15 @@ class _AutolinkTextState extends State<AutolinkText> {
     return RegExp(r'^\d+$').hasMatch(text);
   }
 
-  List<AutolinkTextComponent> _getTextComponents(List<RegExpMatch> matches) {
-    List<AutolinkTextComponent> textComponents = [];
+  List<_AutolinkTextComponent> _getTextComponents(List<RegExpMatch> matches) {
+    List<_AutolinkTextComponent> textComponents = [];
     var offset = 0;
     matches.forEach((match) {
       final textComponent = (widget.text.substring(offset, match.start));
       final linkComponent = (widget.text.substring(match.start, match.end));
       offset = match.end;
-      textComponents.add(AutolinkTextComponent(text: textComponent, isLink: false));
-      textComponents.add(AutolinkTextComponent(text: linkComponent, isLink: true));
+      textComponents.add(_AutolinkTextComponent(text: textComponent, isLink: false));
+      textComponents.add(_AutolinkTextComponent(text: linkComponent, isLink: true));
     });
     return textComponents;
   }
