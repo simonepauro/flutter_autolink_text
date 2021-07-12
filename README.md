@@ -8,11 +8,8 @@ package is not published yet.
 
 
     autolink_text:
-
         git:
-
           url: https://github.com/simonepauro/flutter_autolink_text
-
           ref: main
 
 
