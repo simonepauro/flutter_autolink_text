@@ -2,17 +2,30 @@
 
 https://user-images.githubusercontent.com/16486798/125325763-9a894980-e341-11eb-9a84-a17455494f58.mov
 
-# autolink_text
+## Installation
 
-A new Flutter package project.
+autolink_text:
+    git:
+      url: https://github.com/simonepauro/flutter_autolink_text
+      ref: main
 
-## Getting Started
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+## Import 
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+import 'package:autolink_text/autolink_text.dart';
+
+
+## Usage
+
+AutolinkText widget
+
+Params: 
+text 
+handleTapOnUrl // the url tap callback
+style // the text base style
+linkColor 
+enableShowMore // enables show more (use this only for long texts)
+showMoreLineLimit
+showMoreText // copy for the "show more" button
+showLessText // copy for "show less" button
+
